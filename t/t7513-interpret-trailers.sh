@@ -621,6 +621,16 @@ test_expect_success 'with basic patch' '
 	test_cmp expected actual
 '
 
+test_expect_success 'with URL in message' '
+	cat >expected <<-\EOF &&
+		I committed this.
+
+		https://git-scm.com/
+	EOF
+	git interpret-trailers >actual &&
+	test_cmp expected actual
+'
+
 test_expect_success 'with commit complex message as argument' '
 	test_config trailer.separators ":=" &&
 	test_config trailer.ack.key "Acked-by= " &&

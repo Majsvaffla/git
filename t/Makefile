@@ -16,7 +16,7 @@ include ../shared.mak
 #GIT_TEST_OPTS = --verbose --debug
 SHELL_PATH ?= $(SHELL)
 TEST_SHELL_PATH ?= $(SHELL_PATH)
-PERL_PATH ?= /usr/bin/perl
+PERL_PATH ?= /nix/store/b1n6f1pvkycj24warny93spccbnj9bx3-perl-5.38.2/bin/perl
 TAR ?= $(TAR)
 RM ?= rm -f
 PROVE ?= prove

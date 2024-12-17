@@ -1213,6 +1213,9 @@ int trailer_iterator_advance(struct trailer_iterator *iter)
 			      line, separator_pos);
 		/* Always unfold values during iteration. */
 		unfold_value(&iter->val);
+		if (strncmp(&iter->val, "://", strlen("://"))) {
+			return 0;
+		}
 		return 1;
 	}
 	return 0;
